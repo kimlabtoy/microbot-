@@ -1,0 +1,5 @@
+{
+    "tools|block": "機器人方塊",
+    //"tools.areaOfRectangle|block": "長方形面積 長 %length|寬 %width",
+    "tools.LedTest|block": "笑臉"
+}
