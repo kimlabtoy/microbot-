@@ -127,43 +127,4 @@ namespace KimlabRobot {
         pins.i2cWriteBuffer(IIC_ADDRESS, buf);
     }
     
-	/**
-     * Used to move the given servo to the specified degrees (0-180) connected to the KSB038
-     * @param channel The number (1-16) of the servo to move
-     * @param degrees The degrees (0-180) to move the servo to
-     * @param servomin 'minimum' pulse length count ; eg: 112
-     * @param servomax 'maximum' pulse length count ; eg: 491
-     */
-    //% blockId=PCA_ServoRange
-    //% block="Servo channel %channel|degrees %degree"
-    //% degree.min=0 degree.max=180
-	export function ServoRange(channel: ServoNum, degree: number): void {
-        
-        if(!initialized){
-			init()
-		}
-		// 50hz: 20,000 us
-        //normal 0.5ms~2.4ms
-        //SG90 0.5ms~2.0ms
-        // servomin Servo_min_timing (ms)*1000*4096/20000 
-        // servomax Servo_max_timing (ms)*1000*4096/20000 
-        // let pulselen = servo_map(degree, 0, 180, SERVOMIN, SERVOMAX);
-        let pulselen = servo_map(degree, 0, 180, 112, 491);
-        
-        
-        if (channel < 0 || channel > 15)
-            return;
-
-        let buf = pins.createBuffer(5);
-        buf[0] = LED0_ON_L + 4 * channel;
-        buf[1] = 0;
-        buf[2] = (0>>8);
-        buf[3] = pulselen & 0xff;
-        buf[4] = (pulselen>>8) & 0xff;
-        pins.i2cWriteBuffer(IIC_ADDRESS, buf);
-    }
-	
-	
-	
-	
 }
