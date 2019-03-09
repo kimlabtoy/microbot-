@@ -1,4 +1,4 @@
-//% weight=0 color=#3CB371 icon="\uf6b0" block="KimlabRobot"
+//% weight=0 color=#3CB371 icon="\uf544" block="KimlabRobot"
 namespace KimlabRobot {
     /**
     * 計算長方形面積，並回傳
