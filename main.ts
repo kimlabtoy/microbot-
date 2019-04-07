@@ -128,20 +128,20 @@ namespace KimlabRobot {
         buf[4] = (pulselen>>8) & 0xff;
         pins.i2cWriteBuffer(IIC_ADDRESS, buf);
     }
-	/**
+	
 	//% blockId=OTTO_Servo
     //% block="OTTO_RHAND %RHAND| OTTO_LHAND %LHAND| OTTO_RLEG %RLEG| OTTO_LLEG %LLEG| OTTO_RFOOT %RFOOT| OTTO_LFOOT %LFOOT "
     //% RHAND.min=0 RHAND.max=180 LHAND.min=0 LHAND.max=180 RLEG.min=0 RLEG.max=180 LLEG.min=0 LLEG.max=180 RFOOT.min=0 RFOOT.max=180 LFOOT.min=0 LFOOT.max=180
 	export function OTTO_Servo(RHAND: number,LHAND: number,RLEG: number,LLEG: number,RFOT: number,LFOOT: number): void {
-        KimlabRobot.Servo(1,RHAND),
-		KimlabRobot.Servo(2,RLEG),
-		KimlabRobot.Servo(3,RFOOT),
-		KimlabRobot.Servo(14,LHAND),
-		KimlabRobot.Servo(13,LLEG),
-		KimlabRobot.Servo(12,LFOOT)
+        KimlabRobot.Servo(KimlabRobot.ServoNum.S2,RHAND)
+		KimlabRobot.Servo(KimlabRobot.ServoNum.S3,RLEG)
+		KimlabRobot.Servo(KimlabRobot.ServoNum.S4,RFOOT)
+		KimlabRobot.Servo(KimlabRobot.ServoNum.S15,LHAND)
+		KimlabRobot.Servo(KimlabRobot.ServoNum.S14,LLEG)
+		KimlabRobot.Servo(KimlabRobot.ServoNum.S13,LFOOT)
 		
         
     }
-	*/
+	
     
 }
