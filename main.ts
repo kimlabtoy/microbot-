@@ -129,9 +129,15 @@ namespace KimlabRobot {
 	
 	//% blockId=OTTO_Servo
     //% block="OTTO_RHAND %RHAND| OTTO_LHAND %LHAND| OTTO_RLEG %RLEG| OTTO_LLEG %LLEG| OTTO_RFOOT %RFOOT| OTTO_LFOOT %LFOOT "
-    //% RHand.min=0 RHAND.max=180 LHand.min=0 LHAND.max=180 RLEG.min=0 RLEG.max=180 LLEG.min=0 LLEG.max=180 RFOOT.min=0 RFOOT.max=180 LFOOT.min=0 LFOOT.max=180
+    //% RHAND.min=0 RHAND.max=180 LHANDd.min=0 LHAND.max=180 RLEG.min=0 RLEG.max=180 LLEG.min=0 LLEG.max=180 RFOOT.min=0 RFOOT.max=180 LFOOT.min=0 LFOOT.max=180
 	export function OTTO_Servo(RHAND: number,LHAND: number,RLEG: number,LLEG: number,RFOT: number,LFOOT: number): void {
-        
+        KimlabRobot.Servo(1,RHAND);
+	KimlabRobot.Servo(2,RLEG);
+	KimlabRobot.Servo(3,RFOOT);
+	KimlabRobot.Servo(14,LHAND);
+	KimlabRobot.Servo(13,LLEG);
+	KimlabRobot.Servo(12,LFOOT);
+		
         
     }
 	
