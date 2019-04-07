@@ -92,14 +92,16 @@ namespace KimlabRobot {
     {
         return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
     }
+	/**
     /**
      * Used to move the given servo to the specified degrees (0-180) connected to the KSB038
      * @param channel The number (1-16) of the servo to move
      * @param degrees The degrees (0-180) to move the servo to 
-     */
-    //% blockId=PCA_Servo
-    //% block="Servo channel %channel|degrees %degree"
-    //% degree.min=0 degree.max=180
+     
+     * //% blockId=PCA_Servo
+     * //% block="Servo channel %channel|degrees %degree"
+     * //% degree.min=0 degree.max=180
+	 */
 	export function Servo(channel: ServoNum, degree: number): void {
         
         if(!initialized){
@@ -132,11 +134,11 @@ namespace KimlabRobot {
     //% RHAND.min=0 RHAND.max=180 LHAND.min=0 LHAND.max=180 RLEG.min=0 RLEG.max=180 LLEG.min=0 LLEG.max=180 RFOOT.min=0 RFOOT.max=180 LFOOT.min=0 LFOOT.max=180
 	export function OTTO_Servo(RHAND: number,LHAND: number,RLEG: number,LLEG: number,RFOT: number,LFOOT: number): void {
         KimlabRobot.Servo(1,RHAND);
-	KimlabRobot.Servo(2,RLEG);
-	KimlabRobot.Servo(3,RFOOT);
-	KimlabRobot.Servo(14,LHAND);
-	KimlabRobot.Servo(13,LLEG);
-	KimlabRobot.Servo(12,LFOOT);
+		KimlabRobot.Servo(2,RLEG);
+		KimlabRobot.Servo(3,RFOOT);
+		KimlabRobot.Servo(14,LHAND);
+		KimlabRobot.Servo(13,LLEG);
+		KimlabRobot.Servo(12,LFOOT);
 		
         
     }
