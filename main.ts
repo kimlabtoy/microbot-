@@ -126,36 +126,12 @@ namespace KimlabRobot {
         buf[4] = (pulselen>>8) & 0xff;
         pins.i2cWriteBuffer(IIC_ADDRESS, buf);
     }
-	
 	//% blockId=OTTO_Servo
-    //% block="Servo channel %channel|degrees %degree Servo channel %channel|degrees %degree Servo channel %channel|degrees %degree Servo channel %channel|degrees %degree Servo channel %channel|degrees %degree "
-    //% degree.min=0 degree.max=180
-	export function Servo(channel: ServoNum, degree: number): void {
-        
-        if(!initialized){
-			init()
-		}
-		// 50hz: 20,000 us
-        //let servo_timing = (degree*1800/180+600) // 0.55 ~ 2.4
-        //let pulselen = servo_timing*4096/20000
-        //normal 0.5ms~2.4ms
-        //SG90 0.5ms~2.0ms
-
-        let pulselen = servo_map(degree, 0, 180, 112, 491);
-        //let pulselen = servo_map(degree, 0, 180, servomin, servomax);
+    //% block="OTTO_RHAND %RHAND| OTTO_LHAND %LHAND| OTTO_RLEG %RLEG| OTTO_LLEG %LLEG| OTTO_RFOOT %RFOOT| OTTO_LFOOT %LFOOT "
+    //% RHand.min=0 RHAND.max=180 LHand.min=0 LHAND.max=180 RLEG.min=0 RLEG.max=180 LLEG.min=0 LLEG.max=180 RFOOT.min=0 RFOOT.max=180 LFOOT.min=0 LFOOT.max=180
+	export function Servo(RHAND: number,LHAND: number,RLEG: number,LLEG: number,RFOT: number,LFOOT: number): void {
         
         
-        if (channel < 0 || channel > 15)
-            return;
-
-        let buf = pins.createBuffer(5);
-        buf[0] = LED0_ON_L + 4 * channel;
-        buf[1] = 0;
-        buf[2] = (0>>8);
-        buf[3] = pulselen & 0xff;
-        buf[4] = (pulselen>>8) & 0xff;
-        pins.i2cWriteBuffer(IIC_ADDRESS, buf);
     }
-	
     
 }
