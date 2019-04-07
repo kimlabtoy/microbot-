@@ -129,7 +129,7 @@ namespace KimlabRobot {
 	//% blockId=OTTO_Servo
     //% block="OTTO_RHAND %RHAND| OTTO_LHAND %LHAND| OTTO_RLEG %RLEG| OTTO_LLEG %LLEG| OTTO_RFOOT %RFOOT| OTTO_LFOOT %LFOOT "
     //% RHand.min=0 RHAND.max=180 LHand.min=0 LHAND.max=180 RLEG.min=0 RLEG.max=180 LLEG.min=0 LLEG.max=180 RFOOT.min=0 RFOOT.max=180 LFOOT.min=0 LFOOT.max=180
-	export function Servo(RHAND: number,LHAND: number,RLEG: number,LLEG: number,RFOT: number,LFOOT: number): void {
+	export function OTTO_Servo(RHAND: number,LHAND: number,RLEG: number,LLEG: number,RFOT: number,LFOOT: number): void {
         
         
     }
