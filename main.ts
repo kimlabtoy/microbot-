@@ -128,7 +128,7 @@ namespace KimlabRobot {
     }
 	
 	//% blockId=OTTO_Servo
-    //% block="Servo channel %channel|degrees %degree\n Servo channel %channel|degrees %degree\n Servo channel %channel|degrees %degree\n Servo channel %channel|degrees %degree\n Servo channel %channel|degrees %degree\n "
+    //% block="Servo channel %channel|degrees %degree Servo channel %channel|degrees %degree Servo channel %channel|degrees %degree Servo channel %channel|degrees %degree Servo channel %channel|degrees %degree "
     //% degree.min=0 degree.max=180
 	export function Servo(channel: ServoNum, degree: number): void {
         
